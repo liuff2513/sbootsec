@@ -1,4 +1,4 @@
-package com.example.config;
+package com.sec.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.example.security.CustomUserService;
+import com.sec.core.security.CustomUserService;
 
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
