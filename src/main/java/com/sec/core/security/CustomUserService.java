@@ -5,8 +5,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.example.dao.SysUserRepository;
-import com.example.domain.SysUser;
+import com.sec.example.dao.SysUserRepository;
+import com.sec.example.domain.SysUser;
 
 public class CustomUserService implements UserDetailsService {
 

@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.sec.example.domain;
 
 public class Msg {
 	private String title;

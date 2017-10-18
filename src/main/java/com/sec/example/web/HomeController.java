@@ -1,10 +1,10 @@
-package com.example.web;
+package com.sec.example.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.domain.Msg;
+import com.sec.example.domain.Msg;
 
 @Controller
 public class HomeController {
