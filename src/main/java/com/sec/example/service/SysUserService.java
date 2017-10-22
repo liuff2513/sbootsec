@@ -1,6 +1,6 @@
 package com.sec.example.service;
 
-import com.sec.example.domain.SysUser;
+import com.sec.example.model.SysUser;
 import com.sec.example.mapper.SysUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

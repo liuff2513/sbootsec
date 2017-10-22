@@ -1,4 +1,4 @@
-package com.sec.example.domain;
+package com.sec.example.model;
 
 public class Msg {
 	private String title;

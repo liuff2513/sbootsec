@@ -1,6 +1,6 @@
 package com.sec.example.web;
 
-import com.sec.example.domain.Msg;
+import com.sec.example.model.Msg;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

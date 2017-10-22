@@ -1,6 +1,6 @@
 package com.sec.example.service;
 
-import com.sec.example.domain.SysRole;
+import com.sec.example.model.SysRole;
 import com.sec.example.mapper.SysRoleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

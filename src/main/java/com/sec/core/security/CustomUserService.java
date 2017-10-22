@@ -1,7 +1,7 @@
 package com.sec.core.security;
 
-import com.sec.example.domain.SysRole;
-import com.sec.example.domain.SysUser;
+import com.sec.example.model.SysRole;
+import com.sec.example.model.SysUser;
 import com.sec.example.service.SysRoleService;
 import com.sec.example.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
