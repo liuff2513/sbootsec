@@ -1,16 +1,18 @@
 package com.sec.core.config;
 
+import com.sec.core.security.CustomUserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-
-import com.sec.core.security.CustomUserService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
+@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Bean
@@ -20,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(customUserService());
+		auth.userDetailsService(customUserService()).passwordEncoder(new BCryptPasswordEncoder());
 	}
 
 	@Override
@@ -38,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/bootstrap/**","/*.js");
+		web.ignoring().antMatchers("/bootstrap/**","/*.js","/druid/*");
 	}
 	
 }

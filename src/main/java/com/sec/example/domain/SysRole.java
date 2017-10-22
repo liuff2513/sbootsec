@@ -8,15 +8,15 @@ import javax.persistence.Id;
 public class SysRole {
 
 	@Id
-	@GeneratedValue
-	private Long id;
+	@GeneratedValue(generator="UUID")
+	private String id;
 	private String name;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
