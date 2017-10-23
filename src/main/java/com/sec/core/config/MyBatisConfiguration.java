@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @MapperScan(basePackages = {"com.sec"})
 @EnableTransactionManagement
-public class MyBatisConfig {
+public class MyBatisConfiguration {
 //    @Resource
 //    private DataSource dataSource;
 //

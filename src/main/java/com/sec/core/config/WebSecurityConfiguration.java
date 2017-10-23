@@ -11,9 +11,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/**
+ * ClassName: WebSecurityConfig
+ * @Description: Security创建过滤器
+ * @author feifei.liu
+ * @date 2017/10/23 12:39
+ */
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
+public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 
 	@Bean
 	UserDetailsService customUserService(){
