@@ -1,4 +1,4 @@
-package com.sec.example.dao;
+package com.sec.example.mapper;
 
 import com.sec.example.entity.SysRole;
 import org.apache.ibatis.annotations.Mapper;
