@@ -1,4 +1,4 @@
-package com.sec.example.model;
+package com.sec.example.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

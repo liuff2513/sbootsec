@@ -1,6 +1,6 @@
-package com.sec.example.mapper;
+package com.sec.example.dao;
 
-import com.sec.example.model.SysUser;
+import com.sec.example.entity.SysUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import tk.mybatis.mapper.common.BaseMapper;

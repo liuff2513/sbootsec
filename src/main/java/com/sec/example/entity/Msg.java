@@ -1,4 +1,4 @@
-package com.sec.example.model;
+package com.sec.example.entity;
 
 public class Msg {
 	private String title;
