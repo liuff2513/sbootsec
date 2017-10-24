@@ -15,9 +15,4 @@ public class HomeController {
 		model.addAttribute("msg", msg);
 		return "/home";
 	}
-
-	public static void main(String[] args) {
-		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		System.out.println(passwordEncoder.encode("demo"));
-	}
 }

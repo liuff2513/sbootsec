@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>注册页面</title>
+</head>
+<body>
+<nav class="navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Spring Security 演示</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/}">首页</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="starter-template">
+        <p th:if="${param.logout}" class="bg-warning">已成功注销</p>
+        <p th:if="${param.error}" class="bg-danger">用户错误，请重试</p>
+        <h2>账号注册</h2>
+        <form name="form" th:action="@{/account/register}" action="/account/register" method="post">
+            <div class="form-group">
+                <label for="username">账号</label>
+                <input type="text" class="form-control" name="username" value="" placeholder="账号"/>
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" class="form-control" name="password" value="" placeholder="密码"/>
+            </div>
+            <div class="form-group">
+                <label for="username">手机号</label>
+                <input type="text" class="form-control" name="mobilePhone" value="" placeholder="手机"/>
+            </div>
+            <input type="submit" id="login" value="login" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -26,9 +26,14 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 		return new CustomUserService();
 	}
 
+	@Bean
+	BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder(4);
+	}
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(customUserService()).passwordEncoder(new BCryptPasswordEncoder());
+		auth.userDetailsService(customUserService()).passwordEncoder(bCryptPasswordEncoder());
 	}
 
 	@Override
@@ -46,7 +51,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/bootstrap/**","/*.js","/druid/*");
+		web.ignoring().antMatchers("/bootstrap/**","/*.js","/druid/*","/account/*");
 	}
 	
 }
