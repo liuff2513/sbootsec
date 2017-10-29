@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -13,9 +14,29 @@ import java.nio.charset.Charset;
 public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+	}
+
+	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/login").setViewName("/account/login");
 		registry.addViewController("/account/registerPage").setViewName("/account/register");
+		registry.addViewController("/bbsd/activate").setViewName("/bbs/user/activate");
+		registry.addViewController("/bbsd/forget").setViewName("/bbs/user/forget");
+		registry.addViewController("/bbsd/home").setViewName("/bbs/user/home");
+		registry.addViewController("/bbsd/index").setViewName("/bbs/user/index");
+		registry.addViewController("/bbsd/login").setViewName("/bbs/user/login");
+		registry.addViewController("/bbsd/message").setViewName("/bbs/user/message");
+		registry.addViewController("/bbsd/reg").setViewName("/bbs/user/reg");
+		registry.addViewController("/bbsd/set").setViewName("/bbs/user/set");
+
+		registry.addViewController("/common/footer").setViewName("/bbs/common/footer");
+		registry.addViewController("/common/header").setViewName("/bbs/common/header");
+		registry.addViewController("/common/link").setViewName("/bbs/common/link");
+		registry.addViewController("/jie/add").setViewName("/bbs/jie/add");
+		registry.addViewController("/jie/detail").setViewName("/bbs/jie/detail");
+		registry.addViewController("/jie/index").setViewName("/bbs/jie/index");
 	}
 
 	/**

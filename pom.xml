@@ -36,6 +36,7 @@
 		<mapper-spring-boot-starter.version>1.1.4</mapper-spring-boot-starter.version>
 		<druid-spring-boot-starter.version>1.1.4</druid-spring-boot-starter.version>
 		<pagehelper-spring-boot-starter.version>1.2.1</pagehelper-spring-boot-starter.version>
+		<activiti-spring-boot-starter-basic.version>5.21.0</activiti-spring-boot-starter-basic.version>
 	</properties>
 
 	<dependencies>
@@ -73,6 +74,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring-boot-starter-basic</artifactId>
+			<version>${activiti-spring-boot-starter-basic.version}</version>
 		</dependency>
 
 		<!--mybatis-->
