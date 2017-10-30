@@ -79,6 +79,11 @@
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring-boot-starter-basic</artifactId>
 			<version>${activiti-spring-boot-starter-basic.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring-boot-starter-actuator</artifactId>
+			<version>${activiti-spring-boot-starter-basic.version}</version>
 		</dependency>-->
 
 		<!--mybatis-->
