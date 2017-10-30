@@ -75,11 +75,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring-boot-starter-basic</artifactId>
 			<version>${activiti-spring-boot-starter-basic.version}</version>
-		</dependency>
+		</dependency>-->
 
 		<!--mybatis-->
 		<dependency>
