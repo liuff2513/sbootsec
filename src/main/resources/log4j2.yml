@@ -11,7 +11,7 @@ Configuration:
       - name: log.level.baihui
         value: trace
       - name: log.path
-        value: E:/Workspaces/logs
+        value: E:/Workspaces/logs3
       - name: project.name
         value: sbootbh
       - name: mongodb.server
@@ -58,8 +58,8 @@ Configuration:
         - ref: CONSOLE
         - ref: ROLLING_FILE
 
-#    Logger: # 为com.baihui包配置特殊的Log级别，方便调试
-#      - name: com.baihui
+#    Logger: # 为com.sec包配置特殊的Log级别，方便调试
+#      - name: com.sec
 #        additivity: false
 #        level: ${sys:log.level.baihui}
 #        AppenderRef:
@@ -70,7 +70,7 @@ Configuration:
     Logger:
       - name: demo
         additivity: false
-        level: ${sys:log.level.baihui}
+        level: ${log.level.baihui}
         AppenderRef:
           - ref: CONSOLE
           - ref: ROLLING_FILE
