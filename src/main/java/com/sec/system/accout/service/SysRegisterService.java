@@ -45,4 +45,7 @@ public class SysRegisterService {
             return false;
         }
     }
+    public String encrypt(String password) {
+        return bCryptPasswordEncoder.encode(password);
+    }
 }
