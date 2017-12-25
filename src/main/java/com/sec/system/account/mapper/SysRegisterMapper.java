@@ -1,6 +1,6 @@
-package com.sec.system.accout.mapper;
+package com.sec.system.account.mapper;
 
-import com.sec.system.accout.entity.SysRegister;
+import com.sec.system.account.entity.SysRegister;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.common.BaseMapper;

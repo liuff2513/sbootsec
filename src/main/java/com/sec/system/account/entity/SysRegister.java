@@ -1,4 +1,4 @@
-package com.sec.system.accout.entity;
+package com.sec.system.account.entity;
 
 import com.sec.core.entity.IdEntity;
 

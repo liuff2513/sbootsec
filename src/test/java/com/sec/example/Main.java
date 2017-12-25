@@ -1,6 +1,6 @@
 package com.sec.example;
 
-import com.sec.system.accout.service.SysRegisterService;
+import com.sec.system.account.service.SysRegisterService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

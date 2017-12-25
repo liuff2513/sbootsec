@@ -1,8 +1,8 @@
-package com.sec.system.accout.web;
+package com.sec.system.account.web;
 
 import com.sec.core.util.SpringContextUtil;
-import com.sec.system.accout.entity.SysRegister;
-import com.sec.system.accout.service.SysRegisterService;
+import com.sec.system.account.entity.SysRegister;
+import com.sec.system.account.service.SysRegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

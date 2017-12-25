@@ -1,0 +1,105 @@
+spring:
+  #JDBC 配置
+  datasource:
+    url: jdbc:postgresql://192.168.58.139:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    #连接池配置
+    druid:
+      # 下面为连接池的补充设置，应用到上面所有数据源中
+      # 初始化大小，最小，最大
+      initial-size: 20
+      min-idle: 20
+      max-active: 200
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j2,config
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      # 合并多个DruidDataSource的监控数据
+      use-global-data-source-stat: true
+      # 监控配置# WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+#      web-stat-filter:
+#        enabled: true
+#        url-pattern: /druid/*
+#        exclusions: *.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*
+#        session-stat-enable: true
+#        session-stat-max-count: 10000
+#        principal-session-name: _USER_LOGIN_.logname
+#        principal-cookie-name: _USER_LOGIN_.logname
+#        profile-enable: true
+#      # StatViewServlet配置，说明请参考Druid Wiki，配置_StatViewServlet配置
+#      stat-view-servlet:
+#        enabled: true
+#        url-pattern: /druid/*
+#        reset-enable: false
+#        login-username: admin
+#        login-password: liu@617428@*
+#        allow: 127.0.0.1 # IP白名单
+#        deny: 127.0.0.111 # IP黑名单
+
+    ## Spring监控配置，说明请参考Druid Github Wiki，配置_Druid和Spring关联监控配置
+    #spring.datasource.druid.aop-patterns= # Spring监控AOP切入点，如x.y.z.service.*,配置多个英文逗号分隔
+    ## 如果spring.datasource.druid.aop-patterns要代理的类没有定义interface请设置spring.aop.proxy-target-class=true
+
+    #mybatis
+    #mybatis.type-aliases-package=com.sec.example.model
+    #mybatis.mapper-locations=classpath:mapper/*.xml
+
+    #mapper
+    #mappers 多个接口时逗号隔开
+    #mapper.mappers=com.sec.core.config.BaseMapper
+    #mapper.not-empty=false
+    #mapper.identity=MYSQL
+
+    #pagehelper
+    #pagehelper.helperDialect=mysql
+    #pagehelper.reasonable=true
+    #pagehelper.supportMethodsArguments=true
+    #pagehelper.params=count=countSql
+
+    #spring.profiles.active=freemarker,thymeleaf
+
+    # THYMELEAF (ThymeleafAutoConfiguration)
+  thymeleaf:
+    template-resolver-order: 1
+    cache: true
+    check-template: true
+    check-template-location: true
+    content-type: text/html;charset=UTF-8
+    enabled: true
+    #spring.thymeleaf.excluded-view-names= # Comma-separated list of view names that should be excluded from resolution.
+    #spring.thymeleaf.mode=HTML
+    prefix: classpath:/views/
+    suffix: .html
+    #spring.thymeleaf.template-resolver-order= # Order of the template resolver in the chain.
+    #spring.thymeleaf.view-names= # Comma-separated list of view names that can be resolved.
+
+logging:
+  level:
+    org:
+      springframework:
+        security: INFO
+server:
+  port: 8080
+  session-timeout: 1800
+  context-path: /
+
+  tomcat:
+    uri-encoding: UTF-8
+    compression: off

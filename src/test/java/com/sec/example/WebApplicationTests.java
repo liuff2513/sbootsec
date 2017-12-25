@@ -1,7 +1,7 @@
 package com.sec.example;
 
 import com.sec.core.util.SpringContextUtil;
-import com.sec.system.accout.service.SysRegisterService;
+import com.sec.system.account.service.SysRegisterService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

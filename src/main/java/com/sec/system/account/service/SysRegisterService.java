@@ -1,11 +1,11 @@
-package com.sec.system.accout.service;
+package com.sec.system.account.service;
 
 import com.sec.example.entity.SysRole;
 import com.sec.example.entity.SysUser;
 import com.sec.example.mapper.SysRoleMapper;
 import com.sec.example.mapper.SysUserMapper;
-import com.sec.system.accout.entity.SysRegister;
-import com.sec.system.accout.mapper.SysRegisterMapper;
+import com.sec.system.account.entity.SysRegister;
+import com.sec.system.account.mapper.SysRegisterMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

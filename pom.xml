@@ -32,12 +32,14 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<postgresql.version>42.1.1</postgresql.version>
-		<druid.version>1.1.5</druid.version>
+		<druid.version>1.1.6</druid.version>
 		<mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
 		<mapper-spring-boot-starter.version>1.1.4</mapper-spring-boot-starter.version>
 		<pagehelper-spring-boot-starter.version>1.2.1</pagehelper-spring-boot-starter.version>
 		<activiti-spring-boot-starter-basic.version>5.21.0</activiti-spring-boot-starter-basic.version>
 		<log4j2.version>2.8.2</log4j2.version>
+		<druid-spring-boot-starter.version>1.1.6</druid-spring-boot-starter.version>
+		<jackson-dataformat-yaml.version>2.8.8</jackson-dataformat-yaml.version>
 	</properties>
 
 	<dependencies>
@@ -46,7 +48,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 			<exclusions>
-				<exclusion>
+				<exclusion><!-- exclude掉spring-boot的默认log配置 -->
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-logging</artifactId>
 				</exclusion>
@@ -86,9 +88,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+		<dependency><!-- 引入log4j2依赖 -->
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		<dependency><!-- 加上这个才能辨认到log4j2.yml文件 -->
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+			<version>${jackson-dataformat-yaml.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -120,7 +127,16 @@
 			<artifactId>activiti-spring-boot-starter-actuator</artifactId>
 			<version>${activiti-spring-boot-starter-basic.version}</version>
 		</dependency>-->
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>${druid-spring-boot-starter.version}</version>
+		</dependency>
 		<!--mybatis-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>

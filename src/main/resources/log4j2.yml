@@ -43,13 +43,13 @@ Configuration:
             size: "50 MB"
         DefaultRolloverStrategy:
           max: 1000
-    NoSql:
-      name: MONGO_CC
-      MongoDb:
-        databaseName: ${mongodb.databaseName}
-        collectionName: "exceptioninfo"
-        server: ${mongodb.server}
-        port: ${mongodb.port}
+#    NoSql:
+#      name: MONGO_CC
+#      MongoDb:
+#        databaseName: ${mongodb.databaseName}
+#        collectionName: "exceptioninfo"
+#        server: ${mongodb.server}
+#        port: ${mongodb.port}
 
   Loggers:
     Root:
@@ -73,9 +73,9 @@ Configuration:
         level: ${log.level.baihui}
         AppenderRef:
           - ref: CONSOLE
-          - ref: ROLLING_FILE
-      - name: exceptioninfo
-        additivity: false
-        level: trace
-        AppenderRef:
-          - ref: MONGO_CC
+         - name: exceptioninfo
+   #        additivity: false
+   #        level: trace
+   #        AppenderRef:
+   #          - ref: MONGO_CC       - ref: ROLLING_FILE
+#
