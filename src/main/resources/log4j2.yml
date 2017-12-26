@@ -30,7 +30,9 @@ Configuration:
         onMatch: ACCEPT
         onMismatch: DENY
       PatternLayout:
-        pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"
+#        pattern: "%highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=Bright Red, ERROR=Bright Magenta, WARN=Bright Yellow, INFO=Bright Green, DEBUG=Bright Cyan, TRACE=Bright White}"
+        pattern: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+#        pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"
     RollingFile: # 输出到文件，超过50MB归档
       - name: ROLLING_FILE
         ignoreExceptions: false
@@ -67,15 +69,15 @@ Configuration:
 #          - ref: ROLLING_FILE
 #          - ref: MONGO_CC
 
-    Logger:
-      - name: demo
-        additivity: false
-        level: ${log.level.baihui}
-        AppenderRef:
-          - ref: CONSOLE
-         - name: exceptioninfo
-   #        additivity: false
-   #        level: trace
-   #        AppenderRef:
-   #          - ref: MONGO_CC       - ref: ROLLING_FILE
-#
+#    Logger:
+#      - name: demo
+#        additivity: false
+#        level: ${log.level.baihui}
+#        AppenderRef:
+#          - ref: CONSOLE
+#          - name: exceptioninfo
+#           additivity: false
+#           level: trace
+#           AppenderRef:
+#             - ref: MONGO_CC
+#             - ref: ROLLING_FILE

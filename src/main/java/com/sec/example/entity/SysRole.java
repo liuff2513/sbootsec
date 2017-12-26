@@ -3,10 +3,12 @@ package com.sec.example.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class SysRole {
+public class SysRole implements Serializable {
 
+	private static final long serialVersionUID = 6133334157620734622L;
 	@Id
 	@GeneratedValue(generator="UUID")
 	private String id;

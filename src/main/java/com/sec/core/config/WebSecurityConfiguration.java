@@ -1,9 +1,11 @@
 package com.sec.core.config;
 
 import com.sec.core.security.CustomUserService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,6 +22,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  */
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true, proxyTargetClass =  true)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
@@ -50,9 +53,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logout().permitAll();
     }
 
+    @Value("${web.security.unlisten-urls}")
+    private String[] unlistenUrls;
+
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/**/*.js", "/**/*.css", "/**/*.jpg", "/**/*.png", "/**/*.woff", "/**/*.ttf", "/druid/*", "/account/*", "/index", "/bbsd/*", "/common/*", "/jie/*");
+        //设置不拦截规则
+        web.ignoring().antMatchers(unlistenUrls);
     }
 
 }
